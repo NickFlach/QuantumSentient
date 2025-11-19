@@ -6,6 +6,7 @@ export const preorders = pgTable("preorders", {
   id: serial("id").primaryKey(),
   email: text("email").notNull().unique(),
   ip: text("ip"),
+  accessCode: text("access_code"),
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
