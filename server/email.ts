@@ -47,6 +47,7 @@ export class EmailService {
             <p>Your unique encrypted access code is:</p>
             <h2 style="font-size: 32px; letter-spacing: 5px; color: #fff;">${code}</h2>
             <p>Do not share this frequency.</p>
+            <p>You will be contacted shortly with further directive.</p>
             <br/>
             <p>Space Child Industries</p>
           </div>
