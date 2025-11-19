@@ -1,7 +1,10 @@
-import { useEffect, useRef } from "react";
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-import { Shield, Cpu, Globe, Lock, Radio, Zap, ChevronRight, Terminal } from "lucide-react";
+import { useState, useEffect } from "react";
+import { motion, useScroll, useSpring, AnimatePresence } from "framer-motion";
+import { Shield, Cpu, Globe, Lock, Radio, Zap, ChevronRight, Terminal, X, CheckCircle, ScanLine, Wifi } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogDescription } from "@/components/ui/dialog";
+import { useToast } from "@/hooks/use-toast";
 
 // Assets
 import phoneVideo from "@assets/generated_videos/rotating_space_child_phone_with_ai_screen_5d6b75f4.mp4";
@@ -10,7 +13,7 @@ import aiImage from "@assets/generated_images/Glowing_ethereal_neural_network_re
 
 const GlitchText = ({ text }: { text: string }) => {
   return (
-    <div className="relative inline-block group">
+    <div className="relative inline-block group cursor-default">
       <span className="relative z-10">{text}</span>
       <span className="absolute top-0 left-0 -z-10 w-full h-full text-primary opacity-0 group-hover:opacity-70 animate-glitch translate-x-[2px]">
         {text}
@@ -28,7 +31,7 @@ const FeatureCard = ({ icon: Icon, title, desc, delay }: { icon: any, title: str
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ delay, duration: 0.5 }}
-    className="p-6 border border-white/10 bg-black/40 backdrop-blur-md hover:border-primary/50 transition-colors group"
+    className="p-6 border border-white/10 bg-black/40 backdrop-blur-md hover:border-primary/50 transition-colors group cursor-crosshair"
   >
     <div className="mb-4 p-3 inline-flex items-center justify-center rounded-none bg-white/5 text-primary group-hover:bg-primary group-hover:text-black transition-colors">
       <Icon size={24} />
@@ -38,16 +41,163 @@ const FeatureCard = ({ icon: Icon, title, desc, delay }: { icon: any, title: str
   </motion.div>
 );
 
+const TechnicalBriefModal = () => (
+  <DialogContent className="max-w-4xl bg-black/95 border-white/10 backdrop-blur-xl text-foreground font-mono">
+    <DialogHeader>
+      <DialogTitle className="text-2xl font-bold uppercase tracking-widest text-primary mb-2">Technical Specifications</DialogTitle>
+      <DialogDescription className="text-muted-foreground">
+        CLASSIFIED // LEVEL 5 CLEARANCE // PROJECT SPACE CHILD
+      </DialogDescription>
+    </DialogHeader>
+    <div className="grid md:grid-cols-2 gap-8 mt-6">
+      <div className="space-y-6">
+        <div>
+          <h4 className="text-sm text-white/50 uppercase mb-2 border-b border-white/10 pb-1">Core Architecture</h4>
+          <ul className="space-y-2 text-sm">
+            <li className="flex justify-between"><span className="text-white/70">Processor</span> <span>SC-1 Neural Core (3nm)</span></li>
+            <li className="flex justify-between"><span className="text-white/70">Memory</span> <span>32GB Unified Quantum RAM</span></li>
+            <li className="flex justify-between"><span className="text-white/70">Storage</span> <span>2TB / 5TB Encrypted</span></li>
+            <li className="flex justify-between"><span className="text-white/70">OS</span> <span>Quantum Adaptable OS 1.0</span></li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="text-sm text-white/50 uppercase mb-2 border-b border-white/10 pb-1">Chassis</h4>
+          <ul className="space-y-2 text-sm">
+            <li className="flex justify-between"><span className="text-white/70">Material</span> <span>Aerospace Grade Titanium</span></li>
+            <li className="flex justify-between"><span className="text-white/70">Display</span> <span>6.1" Quantum OLED, 240Hz</span></li>
+            <li className="flex justify-between"><span className="text-white/70">Protection</span> <span>Diamond-Glass Shielding</span></li>
+            <li className="flex justify-between"><span className="text-white/70">Rating</span> <span>IP69K (Vacuum Rated)</span></li>
+          </ul>
+        </div>
+      </div>
+      <div className="space-y-6">
+        <div>
+          <h4 className="text-sm text-white/50 uppercase mb-2 border-b border-white/10 pb-1">Comms Array</h4>
+          <ul className="space-y-2 text-sm">
+            <li className="flex justify-between"><span className="text-white/70">Satellite</span> <span>Low Earth Orbit (LEO) Native</span></li>
+            <li className="flex justify-between"><span className="text-white/70">Terrestrial</span> <span>5G / 6G / LTE Legacy</span></li>
+            <li className="flex justify-between"><span className="text-white/70">Local</span> <span>Wi-Fi 7E / Ultra-Wideband</span></li>
+            <li className="flex justify-between"><span className="text-white/70">Encryption</span> <span>AES-512 + Quantum Key</span></li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="text-sm text-white/50 uppercase mb-2 border-b border-white/10 pb-1">Power</h4>
+          <ul className="space-y-2 text-sm">
+            <li className="flex justify-between"><span className="text-white/70">Battery</span> <span>Graphene Solid State</span></li>
+            <li className="flex justify-between"><span className="text-white/70">Life</span> <span>48hrs Active / 7 Days Standby</span></li>
+            <li className="flex justify-between"><span className="text-white/70">Charging</span> <span>Solar Trickle + 100W Wireless</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div className="mt-8 p-4 border border-primary/20 bg-primary/5 text-xs text-primary/80 font-mono">
+      WARNING: DISASSEMBLY OF DEVICE WILL TRIGGER AUTOMATIC DATA WIPE AND CORE LOCKDOWN.
+    </div>
+  </DialogContent>
+);
+
+const InterfaceOverlay = ({ onClose }: { onClose: () => void }) => {
+  const [step, setStep] = useState(0);
+
+  useEffect(() => {
+    const timer1 = setTimeout(() => setStep(1), 1500); // Biometric Scan
+    const timer2 = setTimeout(() => setStep(2), 3000); // Connection
+    const timer3 = setTimeout(() => setStep(3), 4500); // Success
+    const timer4 = setTimeout(onClose, 6000);
+
+    return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+      clearTimeout(timer3);
+      clearTimeout(timer4);
+    };
+  }, [onClose]);
+
+  return (
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 z-[100] bg-black flex items-center justify-center"
+    >
+      <div className="text-center space-y-8">
+        <div className="relative w-32 h-32 mx-auto flex items-center justify-center">
+          <motion.div 
+            animate={{ rotate: 360 }}
+            transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+            className="absolute inset-0 border-t-2 border-primary rounded-full"
+          />
+          <motion.div 
+            animate={{ rotate: -360 }}
+            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+            className="absolute inset-2 border-b-2 border-secondary rounded-full"
+          />
+          <AnimatePresence mode="wait">
+            {step === 0 && <ScanLine size={48} className="text-primary animate-pulse" />}
+            {step === 1 && <Shield size={48} className="text-primary" />}
+            {step === 2 && <Wifi size={48} className="text-secondary" />}
+            {step === 3 && <CheckCircle size={48} className="text-green-500" />}
+          </AnimatePresence>
+        </div>
+
+        <div className="font-mono text-xl tracking-widest">
+          {step === 0 && <span className="animate-pulse text-primary">SCANNING BIOMETRICS...</span>}
+          {step === 1 && <span className="text-primary">IDENTITY CONFIRMED</span>}
+          {step === 2 && <span className="animate-pulse text-secondary">ESTABLISHING NEURAL LINK...</span>}
+          {step === 3 && <span className="text-green-500">CONNECTED</span>}
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
 export default function Home() {
   const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
+  const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
+  const { toast } = useToast();
+  
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showInterface, setShowInterface] = useState(false);
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleDeploy = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) {
+      toast({
+        title: "ERROR // MISSING KEY",
+        description: "Please enter a valid communication frequency (email).",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+    // Simulate network request
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    
+    toast({
+      title: "ENCRYPTED KEY SENT",
+      description: "Check your secure inbox for deployment instructions.",
+      className: "bg-primary/10 border-primary text-primary",
+    });
+    
+    setEmail("");
+    setIsSubmitting(false);
+  };
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary selection:text-black">
+      <AnimatePresence>
+        {showInterface && <InterfaceOverlay onClose={() => setShowInterface(false)} />}
+      </AnimatePresence>
+
       {/* Scroll Progress */}
       <motion.div 
         className="fixed top-0 left-0 right-0 h-[2px] bg-primary z-50 origin-left"
@@ -57,15 +207,22 @@ export default function Home() {
       {/* Nav */}
       <nav className="fixed top-0 w-full z-40 border-b border-white/5 bg-black/50 backdrop-blur-md">
         <div className="container mx-auto px-6 h-16 flex items-center justify-between">
-          <div className="font-bold text-lg tracking-widest font-sans">
+          <div 
+            className="font-bold text-lg tracking-widest font-sans cursor-pointer"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          >
             SPACE<span className="text-primary">CHILD</span>
           </div>
           <div className="hidden md:flex gap-8 text-sm font-mono text-muted-foreground">
-            <a href="#specs" className="hover:text-primary transition-colors">SPECS</a>
-            <a href="#os" className="hover:text-primary transition-colors">QUANTUM OS</a>
-            <a href="#sentient" className="hover:text-primary transition-colors">SENTIENT 1</a>
+            <button onClick={() => scrollToSection('specs')} className="hover:text-primary transition-colors">SPECS</button>
+            <button onClick={() => scrollToSection('specs')} className="hover:text-primary transition-colors">QUANTUM OS</button>
+            <button onClick={() => scrollToSection('sentient')} className="hover:text-primary transition-colors">SENTIENT 1</button>
           </div>
-          <Button variant="outline" className="rounded-none border-primary/30 hover:bg-primary/10 hover:text-primary font-mono text-xs h-9">
+          <Button 
+            variant="outline" 
+            onClick={() => scrollToSection('deploy')}
+            className="rounded-none border-primary/30 hover:bg-primary/10 hover:text-primary font-mono text-xs h-9"
+          >
             PRE-ORDER <ChevronRight className="ml-2 w-3 h-3" />
           </Button>
         </div>
@@ -103,12 +260,22 @@ export default function Home() {
               Quantum adaptable. Satellite native. Indestructible.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="rounded-none bg-primary text-black hover:bg-primary/90 font-bold tracking-wide px-8 h-14 w-full sm:w-auto">
+              <Button 
+                size="lg" 
+                onClick={() => scrollToSection('deploy')}
+                className="rounded-none bg-primary text-black hover:bg-primary/90 font-bold tracking-wide px-8 h-14 w-full sm:w-auto"
+              >
                 SECURE ACCESS
               </Button>
-              <Button size="lg" variant="outline" className="rounded-none border-white/20 hover:bg-white/5 font-mono h-14 w-full sm:w-auto">
-                VIEW TECHNICAL BRIEF
-              </Button>
+              
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button size="lg" variant="outline" className="rounded-none border-white/20 hover:bg-white/5 font-mono h-14 w-full sm:w-auto">
+                    VIEW TECHNICAL BRIEF
+                  </Button>
+                </DialogTrigger>
+                <TechnicalBriefModal />
+              </Dialog>
             </div>
           </motion.div>
 
@@ -119,17 +286,22 @@ export default function Home() {
             className="relative order-1 lg:order-2 flex justify-center"
           >
             <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full opacity-20" />
-            <div className="relative z-10 w-full max-w-[400px] aspect-[9/16] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl bg-black">
+            <div className="relative z-10 w-full max-w-[400px] aspect-[9/16] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl bg-black group cursor-pointer" onClick={() => setShowInterface(true)}>
                <video 
                  src={phoneVideo}
                  autoPlay 
                  loop 
                  muted 
                  playsInline
-                 className="w-full h-full object-cover scale-110" // Slightly scale up to hide any potential generation edges
+                 className="w-full h-full object-cover scale-110 group-hover:scale-115 transition-transform duration-700"
                />
                {/* Overlay to integrate video with background better */}
                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/40 pointer-events-none" />
+               
+               {/* Interactive Hint */}
+               <div className="absolute bottom-8 left-0 right-0 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                 <span className="bg-black/50 backdrop-blur px-4 py-2 text-xs font-mono text-primary border border-primary/30">CLICK TO SYNC</span>
+               </div>
             </div>
           </motion.div>
         </div>
@@ -222,7 +394,10 @@ export default function Home() {
               </div>
             </div>
 
-            <Button className="bg-secondary hover:bg-secondary/90 text-white rounded-none h-12 px-8 w-full sm:w-auto">
+            <Button 
+              onClick={() => setShowInterface(true)}
+              className="bg-secondary hover:bg-secondary/90 text-white rounded-none h-12 px-8 w-full sm:w-auto"
+            >
               INITIATE INTERFACE
             </Button>
           </div>
@@ -230,7 +405,7 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-primary text-black">
+      <section id="deploy" className="py-24 bg-primary text-black">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-6xl font-bold mb-8 uppercase tracking-tight">
             Join the <span className="text-white">Vanguard</span>
@@ -239,15 +414,22 @@ export default function Home() {
             Equipping the next generation of spies, engineers, and soldiers.
             Limited production run for Batch 1.
           </p>
-          <form className="max-w-md mx-auto flex flex-col sm:flex-row gap-0">
-            <input 
+          <form onSubmit={handleDeploy} className="max-w-md mx-auto flex flex-col sm:flex-row gap-0">
+            <Input 
               type="email" 
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               placeholder="ENTER ENCRYPTED KEY (EMAIL)" 
-              className="flex-1 bg-black text-white px-6 py-4 outline-none border-none placeholder:text-white/40 font-mono text-sm w-full"
+              className="flex-1 bg-black border-none text-white px-6 py-4 h-14 rounded-none placeholder:text-white/40 font-mono text-sm w-full focus-visible:ring-2 focus-visible:ring-white"
+              disabled={isSubmitting}
             />
-            <button className="bg-white text-black px-8 py-4 font-bold hover:bg-black hover:text-white transition-colors uppercase text-sm tracking-wider w-full sm:w-auto">
-              Deploy
-            </button>
+            <Button 
+              type="submit"
+              disabled={isSubmitting}
+              className="bg-white text-black px-8 py-4 h-14 rounded-none font-bold hover:bg-black hover:text-white transition-colors uppercase text-sm tracking-wider w-full sm:w-auto"
+            >
+              {isSubmitting ? "ENCRYPTING..." : "DEPLOY"}
+            </Button>
           </form>
         </div>
       </section>
@@ -262,9 +444,15 @@ export default function Home() {
             © 2025 SPACE CHILD INDUSTRIES. ALL RIGHTS RESERVED.
           </div>
           <div className="flex gap-6 text-white/60">
-            <Globe size={20} className="hover:text-primary cursor-pointer" />
-            <Terminal size={20} className="hover:text-primary cursor-pointer" />
-            <Shield size={20} className="hover:text-primary cursor-pointer" />
+            <div className="group relative">
+                <Globe size={20} className="hover:text-primary cursor-pointer" onClick={() => toast({ description: "Global Network: ONLINE" })} />
+            </div>
+            <div className="group relative">
+                <Terminal size={20} className="hover:text-primary cursor-pointer" onClick={() => toast({ description: "Terminal Access: RESTRICTED" })} />
+            </div>
+            <div className="group relative">
+                <Shield size={20} className="hover:text-primary cursor-pointer" onClick={() => toast({ description: "System Integrity: 100%" })} />
+            </div>
           </div>
         </div>
       </footer>
