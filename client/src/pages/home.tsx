@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogDescription } from "@/components/ui/dialog";
 import { useToast } from "@/hooks/use-toast";
+import { apiRequest } from "@/lib/queryClient";
 
 // Assets
 import phoneVideo from "@assets/generated_videos/rotating_space_child_phone_with_ai_screen_5d6b75f4.mp4";
@@ -179,17 +180,25 @@ export default function Home() {
     }
 
     setIsSubmitting(true);
-    // Simulate network request
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    toast({
-      title: "ENCRYPTED KEY SENT",
-      description: "Check your secure inbox for deployment instructions.",
-      className: "bg-primary/10 border-primary text-primary",
-    });
-    
-    setEmail("");
-    setIsSubmitting(false);
+    try {
+      await apiRequest("POST", "/api/preorder", { email });
+      
+      toast({
+        title: "ENCRYPTED KEY SENT",
+        description: "Check your secure inbox for deployment instructions.",
+        className: "bg-primary/10 border-primary text-primary",
+      });
+      
+      setEmail("");
+    } catch (error) {
+      toast({
+        title: "TRANSMISSION FAILED",
+        description: error instanceof Error ? error.message : "Signal lost. Please retry.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
