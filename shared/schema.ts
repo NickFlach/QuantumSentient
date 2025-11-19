@@ -17,5 +17,5 @@ export const insertPreorderSchema = createInsertSchema(preorders).pick({
   email: z.string().email("Invalid email address")
 });
 
-export type InsertPreorder = z.infer<typeof insertPreorderSchema>;
+export type InsertPreorder = typeof preorders.$inferInsert;
 export type Preorder = typeof preorders.$inferSelect;
