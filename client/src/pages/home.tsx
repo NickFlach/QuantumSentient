@@ -43,7 +43,7 @@ const FeatureCard = ({ icon: Icon, title, desc, delay }: { icon: any, title: str
 );
 
 const TechnicalBriefModal = () => (
-  <DialogContent className="max-w-4xl bg-black/95 border-white/10 backdrop-blur-xl text-foreground font-mono">
+  <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto bg-black/95 border-white/10 backdrop-blur-xl text-foreground font-mono">
     <DialogHeader>
       <DialogTitle className="text-2xl font-bold uppercase tracking-widest text-primary mb-2">Technical Specifications</DialogTitle>
       <DialogDescription className="text-muted-foreground">
@@ -58,7 +58,7 @@ const TechnicalBriefModal = () => (
             <li className="flex justify-between"><span className="text-white/70">Processor</span> <span>SC-1 Neural Core (3nm)</span></li>
             <li className="flex justify-between"><span className="text-white/70">Memory</span> <span>32GB Unified Quantum RAM</span></li>
             <li className="flex justify-between"><span className="text-white/70">Storage</span> <span>2TB / 5TB Encrypted</span></li>
-            <li className="flex justify-between"><span className="text-white/70">OS</span> <span>Quantum Adaptable OS 1.0</span></li>
+            <li className="flex justify-between"><span className="text-white/70">OS</span> <span>GhostOS 1.0</span></li>
           </ul>
         </div>
         <div>
@@ -93,6 +93,11 @@ const TechnicalBriefModal = () => (
     </div>
     <div className="mt-8 p-4 border border-primary/20 bg-primary/5 text-xs text-primary/80 font-mono">
       WARNING: DISASSEMBLY OF DEVICE WILL TRIGGER AUTOMATIC DATA WIPE AND CORE LOCKDOWN.
+    </div>
+    <div className="mt-4 flex justify-end">
+      <DialogTrigger asChild>
+        <Button variant="outline" className="border-white/20 hover:bg-white/10 text-sm">CLOSE BRIEF</Button>
+      </DialogTrigger>
     </div>
   </DialogContent>
 );
@@ -224,7 +229,7 @@ export default function Home() {
           </div>
           <div className="hidden md:flex gap-8 text-sm font-mono text-muted-foreground">
             <button onClick={() => scrollToSection('specs')} className="hover:text-primary transition-colors">SPECS</button>
-            <button onClick={() => scrollToSection('specs')} className="hover:text-primary transition-colors">QUANTUM OS</button>
+            <button onClick={() => scrollToSection('specs')} className="hover:text-primary transition-colors">GHOST OS</button>
             <button onClick={() => scrollToSection('sentient')} className="hover:text-primary transition-colors">SENTIENT 1</button>
           </div>
           <Button 
@@ -357,7 +362,7 @@ export default function Home() {
             <FeatureCard 
               icon={Zap}
               title="INSTANT COMMS"
-              desc="Quantum Adaptable OS prioritizes voice and data packets for near-zero latency in critical situations."
+              desc="GhostOS prioritizes voice and data packets for near-zero latency in critical situations."
               delay={0.5}
             />
             <FeatureCard 
