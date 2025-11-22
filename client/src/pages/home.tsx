@@ -8,7 +8,7 @@ import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 
 // Assets
-import phoneVideo from "@assets/generated_videos/rotating_space_child_phone_with_ai_screen_5d6b75f4.mp4";
+import phoneVideo from "@assets/generated_videos/space_child_sentient_1_quantum_product_video.mp4";
 import networkImage from "@assets/generated_images/Dark_abstract_satellite_network_data_visualization_62cf5f3d.png";
 import aiImage from "@assets/generated_images/Glowing_ethereal_neural_network_representing_AI_consciousness_8399c5e6.png";
 
@@ -271,8 +271,8 @@ export default function Home() {
               </span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-lg mb-8 font-light border-l-2 border-primary/30 pl-6">
-              Built on breakthrough Floquet engineering. Graphene-lattice chassis. Quantum-encrypted comms. 
-              The first truly indestructible AI device designed for those who cannot fail.
+              Built on University of Göttingen quantum breakthroughs. Floquet-tuned circuitry. Graphene superlattice engineering. 
+              The first truly indestructible AI-native device. Offline capable. Quantum-encrypted. For spies, engineers, soldiers.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
@@ -391,12 +391,12 @@ export default function Home() {
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-8 leading-tight">
               QUANTUM <br />
-              <span className="text-secondary">CONSCIOUSNESS</span>
+              <span className="text-secondary">ADAPTED MIND</span>
             </h2>
             <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground leading-relaxed mb-10">
-              Space Child <span className="text-foreground font-bold">Sentient 1</span> operates on quantum-adapted neural pathways. 
-              Engineered materials enable consciousness-level adaptation. It doesn't just respond—it evolves with you in real-time, 
-              anticipating threats before they materialize.
+              Space Child <span className="text-foreground font-bold">Sentient 1</span> harnesses Floquet-engineered materials to achieve consciousness-level adaptation. 
+              Light-tuned quantum circuits learn your patterns, anticipate threats, and evolve with you. 
+              An extension of your mind operating at quantum efficiency—zero latency, infinite intelligence.
             </p>
             
             <div className="grid grid-cols-2 gap-8 mb-12">
