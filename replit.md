@@ -1,8 +1,10 @@
 # Overview
 
-This is a full-stack web application built with React, Express, and PostgreSQL, designed as a landing page with a preorder collection system. The application features a futuristic, tech-focused design aesthetic with custom fonts (Space Grotesk for headlines, JetBrains Mono for UI), and appears to be themed around a product called "Space Child" - likely a tech product with AI and satellite network capabilities based on the referenced assets.
+This is a full-stack web application built with React, Express, and PostgreSQL, designed as a landing page with a preorder collection system for Space Child's "Sentient 1" phone. The application features a Dark Future aesthetic with quantum-engineering messaging, emphasizing Floquet-effect tuning and graphene-lattice materials.
 
-The application follows a modern monorepo structure with separate client and server directories, using TypeScript throughout. The frontend is built with React and Vite, styled with Tailwind CSS and shadcn/ui components, while the backend uses Express with a PostgreSQL database managed through Drizzle ORM.
+The narrative centers on real quantum breakthroughs: the device is "engineered at quantum scale" with Floquet-tuned circuits inspired by recent discoveries in quantum materials engineering. Custom fonts (Space Grotesk for headlines, JetBrains Mono for UI) reinforce the cyberpunk-meets-science aesthetic.
+
+The application follows a modern monorepo structure with separate client and server directories, using TypeScript throughout. The frontend is built with React and Vite, styled with Tailwind CSS and shadcn/ui components, while the backend uses Express with a PostgreSQL database managed through Drizzle ORM. Email functionality sends unique access codes via SMTP with proper secure connection handling.
 
 # User Preferences
 
@@ -128,3 +130,32 @@ Preferred communication style: Simple, everyday language.
 - Custom fonts from Google Fonts (Space Grotesk, JetBrains Mono)
 - Generated video and image assets stored in `attached_assets/` directory
 - Assets imported directly in React components via Vite
+- Favicon and OG image (1920x1080) served from `client/public/` directory
+- Meta tags configured for social sharing with quantum-engineering messaging
+
+## Email Service
+- Nodemailer SMTP integration with secure connection handling
+- Port 465 (implicit TLS) for Zoho SMTP provider
+- Sends unique nanoid-based access codes to preorder emails
+- Includes messaging about future contact directives
+- Connection verified before each send with transporter.verify()
+
+## Recent Updates (November 22, 2025)
+- **Quantum Narrative Overhaul**: Reimagined product messaging around Floquet effects and graphene engineering, inspired by University of Göttingen quantum materials research
+- **Hero Section**: Changed headline from "UNBREAKABLE CONNECTION" to "ENGINEERED AT QUANTUM SCALE"
+- **Feature Cards**: Updated to emphasize quantum engineering aspects:
+  - "Graphene-Lattice Chassis" (Floquet-effect tuned)
+  - "Floquet-Tuned Circuits" (light-pulse optimized electron pathways)
+- **Technical Specs**: Enhanced with quantum material references:
+  - Graphene-Lattice Composite material
+  - Floquet-Effect tuning
+  - Graphene Supercapacitor Array batteries
+  - 72hrs active battery life (improved from 48hrs)
+- **Social Metadata**: Added OG and Twitter Card meta tags with quantum-focused messaging
+- **Visual Assets**: Generated quantum-themed favicon and 16:9 social share image
+
+## Known Implementation Details
+- Email sending now reliable with proper port/secure config (465 = secure: true)
+- Pre-order form successfully validates email uniqueness, generates access codes, sends emails
+- Mock email mode enabled when SMTP credentials missing (for testing)
+- Database stores email, IP address, access code, and timestamp for all preorders

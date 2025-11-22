@@ -64,10 +64,10 @@ const TechnicalBriefModal = () => (
         <div>
           <h4 className="text-sm text-white/50 uppercase mb-2 border-b border-white/10 pb-1">Chassis</h4>
           <ul className="space-y-2 text-sm">
-            <li className="flex justify-between"><span className="text-white/70">Material</span> <span>Aerospace Grade Titanium</span></li>
+            <li className="flex justify-between"><span className="text-white/70">Material</span> <span>Graphene-Lattice Composite</span></li>
+            <li className="flex justify-between"><span className="text-white/70">Engineering</span> <span>Floquet-Effect Tuned</span></li>
             <li className="flex justify-between"><span className="text-white/70">Display</span> <span>6.1" Quantum OLED, 240Hz</span></li>
-            <li className="flex justify-between"><span className="text-white/70">Protection</span> <span>Diamond-Glass Shielding</span></li>
-            <li className="flex justify-between"><span className="text-white/70">Rating</span> <span>IP69K (Vacuum Rated)</span></li>
+            <li className="flex justify-between"><span className="text-white/70">Rating</span> <span>IP69K + Quantum Hardened</span></li>
           </ul>
         </div>
       </div>
@@ -84,9 +84,10 @@ const TechnicalBriefModal = () => (
         <div>
           <h4 className="text-sm text-white/50 uppercase mb-2 border-b border-white/10 pb-1">Power</h4>
           <ul className="space-y-2 text-sm">
-            <li className="flex justify-between"><span className="text-white/70">Battery</span> <span>Graphene Solid State</span></li>
-            <li className="flex justify-between"><span className="text-white/70">Life</span> <span>48hrs Active / 7 Days Standby</span></li>
-            <li className="flex justify-between"><span className="text-white/70">Charging</span> <span>Solar Trickle + 100W Wireless</span></li>
+            <li className="flex justify-between"><span className="text-white/70">Battery</span> <span>Graphene Supercapacitor Array</span></li>
+            <li className="flex justify-between"><span className="text-white/70">Efficiency</span> <span>Floquet-Optimized Circuits</span></li>
+            <li className="flex justify-between"><span className="text-white/70">Life</span> <span>72hrs Active / 14 Days Standby</span></li>
+            <li className="flex justify-between"><span className="text-white/70">Charging</span> <span>Solar + 100W Quantum Charger</span></li>
           </ul>
         </div>
       </div>
@@ -261,17 +262,17 @@ export default function Home() {
             className="order-2 lg:order-1"
           >
             <div className="inline-block px-3 py-1 mb-6 border border-primary/20 bg-primary/5 rounded-none text-primary text-xs font-mono tracking-widest">
-              PROJECT: SENTIENT
+              PROJECT: SENTIENT // QUANTUM ENGINEERED
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-8xl font-bold leading-none mb-6 tracking-tighter">
-              <GlitchText text="UNBREAKABLE" /> <br />
+              <GlitchText text="ENGINEERED" /> <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/50">
-                CONNECTION
+                AT QUANTUM SCALE
               </span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-lg mb-8 font-light border-l-2 border-primary/30 pl-6">
-              The first AI-native device built for the frontline. 
-              Quantum adaptable. Satellite native. Indestructible.
+              Built on breakthrough Floquet engineering. Graphene-lattice chassis. Quantum-encrypted comms. 
+              The first truly indestructible AI device designed for those who cannot fail.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
@@ -330,15 +331,16 @@ export default function Home() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">TACTICAL SUPERIORITY</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">QUANTUM CAPABILITIES</h2>
             <div className="h-1 w-20 bg-primary" />
+            <p className="text-muted-foreground font-mono text-sm mt-4 max-w-2xl">Engineered with materials science breakthroughs. Light-tuned lattice structure. Electronically adaptable architecture.</p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <FeatureCard 
               icon={Shield}
-              title="INDESTRUCTIBLE CHASSIS"
-              desc="Aerospace-grade titanium alloy frame with shock-absorbent molecular structure. Built to survive extreme environments."
+              title="GRAPHENE-LATTICE CHASSIS"
+              desc="Light-engineered quantum lattice structure using Floquet-effect principles. Single-atom layer durability with million-cycle resilience."
               delay={0.1}
             />
             <FeatureCard 
@@ -361,8 +363,8 @@ export default function Home() {
             />
             <FeatureCard 
               icon={Zap}
-              title="INSTANT COMMS"
-              desc="GhostOS prioritizes voice and data packets for near-zero latency in critical situations."
+              title="FLOQUET-TUNED CIRCUITS"
+              desc="Precision light-pulse engineering optimizes electron pathways. Real-time lattice adaptation for maximum efficiency and zero downtime."
               delay={0.5}
             />
             <FeatureCard 
@@ -388,13 +390,13 @@ export default function Home() {
               <span className="animate-pulse">●</span> SYSTEM ONLINE
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-8 leading-tight">
-              MORE THAN <br />
-              <span className="text-secondary">A TOOL</span>
+              QUANTUM <br />
+              <span className="text-secondary">CONSCIOUSNESS</span>
             </h2>
             <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground leading-relaxed mb-10">
-              Space Child <span className="text-foreground font-bold">Sentient 1</span> mirrors your consciousness. 
-              It learns your patterns, anticipates your needs, and evolves with you. 
-              An extension of your mind, optimizing every interaction for maximum efficiency.
+              Space Child <span className="text-foreground font-bold">Sentient 1</span> operates on quantum-adapted neural pathways. 
+              Engineered materials enable consciousness-level adaptation. It doesn't just respond—it evolves with you in real-time, 
+              anticipating threats before they materialize.
             </p>
             
             <div className="grid grid-cols-2 gap-8 mb-12">
