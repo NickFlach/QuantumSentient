@@ -8,7 +8,7 @@ import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 
 // Assets
-import phoneVideo from "@assets/generated_videos/sentient_1_ultra-thin_quantum_phone_display.mp4";
+import phoneVideo from "@assets/generated_videos/sentient_1_living_artifact_-_layered_quantum_device.mp4";
 import networkImage from "@assets/generated_images/Dark_abstract_satellite_network_data_visualization_62cf5f3d.png";
 import aiImage from "@assets/generated_images/Glowing_ethereal_neural_network_representing_AI_consciousness_8399c5e6.png";
 
@@ -53,41 +53,41 @@ const TechnicalBriefModal = () => (
     <div className="grid md:grid-cols-2 gap-8 mt-6">
       <div className="space-y-6">
         <div>
-          <h4 className="text-sm text-white/50 uppercase mb-2 border-b border-white/10 pb-1">Core Architecture</h4>
+          <h4 className="text-sm text-white/50 uppercase mb-2 border-b border-white/10 pb-1">Compute & Intelligence</h4>
           <ul className="space-y-2 text-sm">
-            <li className="flex justify-between"><span className="text-white/70">Processor</span> <span>SC-1 Neural Core (3nm)</span></li>
+            <li className="flex justify-between"><span className="text-white/70">Main Processor</span> <span>SC-1 Neural Core (3nm)</span></li>
+            <li className="flex justify-between"><span className="text-white/70">Neuromorphic Sidecar</span> <span>Spiking Neural Chip (Ultra-Low Power)</span></li>
             <li className="flex justify-between"><span className="text-white/70">Memory</span> <span>32GB Unified Quantum RAM</span></li>
-            <li className="flex justify-between"><span className="text-white/70">Storage</span> <span>2TB / 5TB Encrypted</span></li>
-            <li className="flex justify-between"><span className="text-white/70">OS</span> <span>GhostOS 1.0</span></li>
+            <li className="flex justify-between"><span className="text-white/70">OS</span> <span>GhostOS 1.0 (Context-Aware)</span></li>
           </ul>
         </div>
         <div>
-          <h4 className="text-sm text-white/50 uppercase mb-2 border-b border-white/10 pb-1">Chassis</h4>
+          <h4 className="text-sm text-white/50 uppercase mb-2 border-b border-white/10 pb-1">Shell & Display</h4>
           <ul className="space-y-2 text-sm">
-            <li className="flex justify-between"><span className="text-white/70">Material</span> <span>Graphene-Lattice Composite</span></li>
-            <li className="flex justify-between"><span className="text-white/70">Engineering</span> <span>Floquet-Effect Tuned</span></li>
-            <li className="flex justify-between"><span className="text-white/70">Display</span> <span>6.1" Quantum OLED, 240Hz</span></li>
-            <li className="flex justify-between"><span className="text-white/70">Rating</span> <span>IP69K + Quantum Hardened</span></li>
+            <li className="flex justify-between"><span className="text-white/70">Frame</span> <span>Graphene-Reinforced Composite</span></li>
+            <li className="flex justify-between"><span className="text-white/70">Outer Layer</span> <span>Self-Healing Elastomer Skin</span></li>
+            <li className="flex justify-between"><span className="text-white/70">Display</span> <span>Flexible Graphene Micro-LED + Metasurface</span></li>
+            <li className="flex justify-between"><span className="text-white/70">Rating</span> <span>Impact Redirection + Auto-Healing</span></li>
           </ul>
         </div>
       </div>
       <div className="space-y-6">
         <div>
-          <h4 className="text-sm text-white/50 uppercase mb-2 border-b border-white/10 pb-1">Comms Array</h4>
+          <h4 className="text-sm text-white/50 uppercase mb-2 border-b border-white/10 pb-1">Comms & Security</h4>
           <ul className="space-y-2 text-sm">
-            <li className="flex justify-between"><span className="text-white/70">Satellite</span> <span>Low Earth Orbit (LEO) Native</span></li>
-            <li className="flex justify-between"><span className="text-white/70">Terrestrial</span> <span>5G / 6G / LTE Legacy</span></li>
-            <li className="flex justify-between"><span className="text-white/70">Local</span> <span>Wi-Fi 7E / Ultra-Wideband</span></li>
-            <li className="flex justify-between"><span className="text-white/70">Encryption</span> <span>AES-512 + Quantum Key</span></li>
+            <li className="flex justify-between"><span className="text-white/70">Antenna</span> <span>Phased-Array RF (Electronically Steered)</span></li>
+            <li className="flex justify-between"><span className="text-white/70">Modes</span> <span>LEO Satellite / 5G-6G / Mesh Relay</span></li>
+            <li className="flex justify-between"><span className="text-white/70">Crypto</span> <span>Post-Quantum (Kyber, Dilithium)</span></li>
+            <li className="flex justify-between"><span className="text-white/70">Auth</span> <span>Hardware PUF + Continuous Biometric</span></li>
           </ul>
         </div>
         <div>
-          <h4 className="text-sm text-white/50 uppercase mb-2 border-b border-white/10 pb-1">Power</h4>
+          <h4 className="text-sm text-white/50 uppercase mb-2 border-b border-white/10 pb-1">Power & Energy Harvesting</h4>
           <ul className="space-y-2 text-sm">
-            <li className="flex justify-between"><span className="text-white/70">Battery</span> <span>Graphene Supercapacitor Array</span></li>
-            <li className="flex justify-between"><span className="text-white/70">Efficiency</span> <span>Floquet-Optimized Circuits</span></li>
-            <li className="flex justify-between"><span className="text-white/70">Life</span> <span>72hrs Active / 14 Days Standby</span></li>
-            <li className="flex justify-between"><span className="text-white/70">Charging</span> <span>Solar + 100W Quantum Charger</span></li>
+            <li className="flex justify-between"><span className="text-white/70">Battery</span> <span>Solid-State Graphene Supercapacitor</span></li>
+            <li className="flex justify-between"><span className="text-white/70">Solar</span> <span>Perovskite Laminate (Back + Sides)</span></li>
+            <li className="flex justify-between"><span className="text-white/70">Passive</span> <span>Body-Heat + Motion Harvesting</span></li>
+            <li className="flex justify-between"><span className="text-white/70">Real Use</span> <span>Effectively Never Dies</span></li>
           </ul>
         </div>
       </div>
@@ -271,8 +271,8 @@ export default function Home() {
               </span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-lg mb-8 font-light border-l-2 border-primary/30 pl-6">
-              Built on University of Göttingen quantum breakthroughs. Floquet-tuned circuitry. Graphene superlattice engineering. 
-              The first truly indestructible AI-native device. Offline capable. Quantum-encrypted. For spies, engineers, soldiers.
+              Not a phone. A living artifact. Sentient 1 breathes, heals, adapts. Multi-layered graphene architecture. Self-healing elastomer skin. 
+              Light-bending holographic display. Satellite mind. Quantum-forged identity. For those who cannot fail.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
@@ -331,46 +331,46 @@ export default function Home() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">QUANTUM CAPABILITIES</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">LIVING ARCHITECTURE</h2>
             <div className="h-1 w-20 bg-primary" />
-            <p className="text-muted-foreground font-mono text-sm mt-4 max-w-2xl">Engineered with materials science breakthroughs. Light-tuned lattice structure. Electronically adaptable architecture.</p>
+            <p className="text-muted-foreground font-mono text-sm mt-4 max-w-2xl">Eight layered systems. Each one adaptive, responsive, evolving. Not separate components—a unified consciousness that learns and heals.</p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <FeatureCard 
               icon={Shield}
-              title="GRAPHENE-LATTICE CHASSIS"
-              desc="Light-engineered quantum lattice structure using Floquet-effect principles. Single-atom layer durability with million-cycle resilience."
+              title="INDESTRUCTIBLE SHELL"
+              desc="Graphene-reinforced composite with self-healing elastomer skin. Drop it from a building—forces ripple around it, not through it. Scratches heal with warmth."
               delay={0.1}
             />
             <FeatureCard 
               icon={Radio}
-              title="SATELLITE NATIVE"
-              desc="Universal band connectivity. Seamlessly switches between terrestrial towers and low-orbit satellite networks."
+              title="LIGHT-BENDING DISPLAY"
+              desc="Flexible graphene micro-LED with metasurface optics. Shatter-proof, transparent mode for AR overlays. Visible in full sun, hologram-like depth without headsets."
               delay={0.2}
             />
             <FeatureCard 
-              icon={Lock}
-              title="QUANTUM ENCRYPTION"
-              desc="Unbreakable post-quantum cryptographic standards. Your communications are secure against any adversary."
+              icon={Zap}
+              title="INFINITE POWER"
+              desc="Solid-state graphene supercapacitor with body-heat and motion harvesting. Solar trickle-charge. Under normal use, effectively never dies."
               delay={0.3}
             />
             <FeatureCard 
-              icon={Cpu}
-              title="LOCAL AI MODEL"
-              desc="Personalized LLM running natively on-device. No cloud dependency. Zero latency. Complete privacy."
+              icon={Radio}
+              title="SATELLITE GROUND STATION"
+              desc="Phased-array antennas that electronically aim at LEO constellations. Messaging in the wilderness. Mesh relay in emergencies. Always connected."
               delay={0.4}
             />
             <FeatureCard 
-              icon={Zap}
-              title="FLOQUET-TUNED CIRCUITS"
-              desc="Precision light-pulse engineering optimizes electron pathways. Real-time lattice adaptation for maximum efficiency and zero downtime."
+              icon={Lock}
+              title="QUANTUM-SAFE IDENTITY"
+              desc="Post-quantum cryptography. Hardware keys derived from physical unclonable functions. Continuous biometric auth: gait, voice, microvascular patterns."
               delay={0.5}
             />
             <FeatureCard 
-              icon={Terminal}
-              title="ADAPTABLE OS"
-              desc="Open architecture for forward-deployed engineers. Custom scripts and tools run natively in the shell."
+              icon={Cpu}
+              title="CONTEXT-AWARE OS"
+              desc="Reconfigures UI, permissions, and power per task: Travel, Worksite, Stealth, Emergency. Neuromorphic sidecar chip handles AI at quantum efficiency."
               delay={0.6}
             />
           </div>
@@ -390,13 +390,12 @@ export default function Home() {
               <span className="animate-pulse">●</span> SYSTEM ONLINE
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-8 leading-tight">
-              QUANTUM <br />
-              <span className="text-secondary">ADAPTED MIND</span>
+              MORE THAN <br />
+              <span className="text-secondary">CONSCIOUSNESS</span>
             </h2>
             <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground leading-relaxed mb-10">
-              Space Child <span className="text-foreground font-bold">Sentient 1</span> harnesses Floquet-engineered materials to achieve consciousness-level adaptation. 
-              Light-tuned quantum circuits learn your patterns, anticipate threats, and evolve with you. 
-              An extension of your mind operating at quantum efficiency—zero latency, infinite intelligence.
+              Sentient 1 doesn't just respond. It <span className="text-foreground font-bold">learns</span> your patterns. <span className="text-foreground font-bold">Anticipates</span> threats. <span className="text-foreground font-bold">Heals</span> itself. Every layer—from shell to circuits—adapts in real-time. 
+              An extension of your consciousness operating at quantum speed. Zero latency. Infinite resilience.
             </p>
             
             <div className="grid grid-cols-2 gap-8 mb-12">
