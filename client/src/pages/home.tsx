@@ -8,7 +8,7 @@ import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 
 // Assets
-import phoneVideo from "@assets/generated_videos/sentient_1_living_artifact_-_layered_quantum_device.mp4";
+import phoneVideo from "@assets/generated_videos/sentient_1_realistic_product_showcase.mp4";
 import networkImage from "@assets/generated_images/Dark_abstract_satellite_network_data_visualization_62cf5f3d.png";
 import aiImage from "@assets/generated_images/Glowing_ethereal_neural_network_representing_AI_consciousness_8399c5e6.png";
 
