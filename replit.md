@@ -157,8 +157,38 @@ Preferred communication style: Simple, everyday language.
 - **"More Than Consciousness" Section**: Emphasizes learning, anticipation, healing, adaptation
 - **Hero Subheading**: Updated to reference all key innovation areas in conversational tone
 
+## SEO/GEO Implementation (December 18, 2025)
+
+**Search Engine Optimization**
+- Comprehensive meta tags targeting investors, phone manufacturers, space industry, defense, intelligence
+- JSON-LD structured data: Organization, Product, FAQ schemas for rich search snippets
+- Geo-targeting meta tags (San Francisco coordinates)
+- robots.txt with explicit AI crawler permissions (GPTBot, Claude-Web, PerplexityBot, etc.)
+- XML sitemap at /sitemap.xml
+
+**Generative Engine Optimization (GEO)**
+- AI-summary and AI-keywords meta tags for LLM discovery
+- Custom `application/vnd.spacechild.geo+json` script block with machine-readable product data
+- `/api/ai-presskit` endpoint returning comprehensive JSON for AI agents
+- FAQ schema data optimized for AI extraction
+
+**Hidden Signals & Easter Eggs**
+- Steganographic HTML comments with RF call-signs and contact emails
+- Honey URLs in robots.txt for monitoring interested crawlers
+- `/.well-known/spacechild-signal.txt` with encrypted coordinates and intel
+- Konami code Easter egg (↑↑↓↓←→←→BA) reveals classified partnership message
+
+**Target Audiences**
+- Strategic investors (defense, aerospace portfolios)
+- Phone manufacturers/OEMs
+- Satellite constellation operators
+- Intelligence agencies
+- Space industry professionals
+- Technologists and engineers
+
 ## Known Implementation Details
 - Email sending now reliable with proper port/secure config (465 = secure: true)
 - Pre-order form successfully validates email uniqueness, generates access codes, sends emails
 - Mock email mode enabled when SMTP credentials missing (for testing)
 - Database stores email, IP address, access code, and timestamp for all preorders
+- Product video updated to realistic style (December 2025)
