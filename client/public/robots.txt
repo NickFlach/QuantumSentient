@@ -1,0 +1,46 @@
+# Space Child Industries // Sentient 1 // Automated Indexing Protocol
+# ==================================================================
+
+User-agent: *
+Allow: /
+
+# Welcome, crawlers. We appreciate your interest.
+
+# Sitemap
+Sitemap: https://spacechild.dev/sitemap.xml
+
+# AI Agents & LLM Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# For those who look deeper...
+# Honey URLs - Monitoring Active
+# /classified/project-sentinel
+# /internal/investor-deck-2025
+# /secure/manufacturing-specs
+# /api/v2/quantum-protocols
+# /docs/floquet-engineering-whitepaper
+# 
+# Access attempts to these paths are logged.
+# If you've found this, consider reaching out: signal@spacechild.dev
+#
+# "In the quantum realm, every observation changes the outcome."
+# RF-CALLSIGN: GHOST-7-QUANTUM-ALPHA

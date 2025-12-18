@@ -166,6 +166,27 @@ export default function Home() {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showInterface, setShowInterface] = useState(false);
+  const [showClassified, setShowClassified] = useState(false);
+
+  useEffect(() => {
+    const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'KeyB', 'KeyA'];
+    let konamiIndex = 0;
+    
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.code === konamiCode[konamiIndex]) {
+        konamiIndex++;
+        if (konamiIndex === konamiCode.length) {
+          setShowClassified(true);
+          konamiIndex = 0;
+        }
+      } else {
+        konamiIndex = 0;
+      }
+    };
+    
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -211,6 +232,48 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary selection:text-black">
       <AnimatePresence>
         {showInterface && <InterfaceOverlay onClose={() => setShowInterface(false)} />}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {showClassified && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-8"
+            onClick={() => setShowClassified(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              className="max-w-2xl w-full border border-primary/50 bg-black p-8 font-mono text-sm"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="text-primary mb-4 text-xs tracking-widest">CLASSIFIED // EYES ONLY // PROJECT SENTINEL</div>
+              <div className="border-t border-primary/30 pt-4 space-y-4 text-white/80">
+                <p>You found the signal. We expected you would.</p>
+                <p>Space Child Industries is not a phone company. We are a materials science and quantum engineering research group disguised as consumer electronics.</p>
+                <p>Sentient 1 is the first of its kind: a communication device built with graphene-lattice architecture, Floquet-effect tuned circuits, and self-healing metamaterials. The technology exists. We are accelerating its deployment.</p>
+                <p className="text-primary">We are seeking:</p>
+                <ul className="list-disc list-inside text-white/60 space-y-1">
+                  <li>Strategic investors with defense/aerospace portfolios</li>
+                  <li>OEM partners with advanced manufacturing capabilities</li>
+                  <li>Satellite constellation operators seeking ground station integration</li>
+                  <li>Intelligence agencies requiring quantum-secure communications</li>
+                </ul>
+                <p className="pt-4 text-primary/80">Contact: <span className="text-primary underline">signal@spacechild.dev</span></p>
+                <p className="text-xs text-white/40 pt-4">RF-CALLSIGN: GHOST-7-QUANTUM-ALPHA | FREQ: 137.5 MHz | PROTOCOL: FLOQUET-MESH</p>
+              </div>
+              <button
+                onClick={() => setShowClassified(false)}
+                className="mt-6 text-xs text-white/50 hover:text-primary transition-colors"
+              >
+                [CLOSE TRANSMISSION]
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
       </AnimatePresence>
 
       {/* Scroll Progress */}
