@@ -11,23 +11,23 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.get("/api/ai-presskit", (req, res) => {
     res.json({
       entity: "Space Child Industries",
-      product: "Sentient 1",
-      tagline: "Not a phone. A living artifact.",
-      category: "Quantum-Engineered Communication Device",
+      product: "Quantum Phone",
+      tagline: "Beyond classical electronics. Quantum-enhanced intelligence.",
+      category: "Next-Generation Quantum-Enhanced Communication Device",
       status: "Pre-Order Open",
       investment_stage: "Seeking Strategic Partners",
       
-      summary: "Space Child Sentient 1 is a revolutionary communication device combining materials science (graphene-reinforced composite, self-healing elastomer), quantum security (post-quantum cryptography, hardware PUF), satellite communications (phased-array LEO direct-link), and neuromorphic AI. The device is designed for defense contractors, intelligence operations, space missions, and enterprise security applications.",
+      summary: "The Quantum Phone is a next-generation intelligent device leveraging quantum materials to deliver capabilities far beyond classical electronics—including optimized energy use, ultra-secure communications, real-time quantum sensing, and quantum-enhanced processing. Built on honeycomb-lattice magnets and graphene 2D materials at the intersection of materials science breakthroughs and future consumer AI/quantum functions.",
       
       key_differentiators: [
-        "Indestructible graphene-reinforced composite shell with self-healing elastomer skin",
-        "Flexible graphene micro-LED display with metasurface optics for light-bending",
-        "Solid-state graphene supercapacitor with body-heat and solar energy harvesting",
-        "Phased-array RF antennas for direct LEO satellite communication",
-        "Post-quantum cryptography (Kyber-1024, Dilithium-5) immune to quantum attacks",
-        "Hardware PUF and continuous biometric authentication",
-        "Neuromorphic spiking neural chip for on-device AI at quantum efficiency",
-        "Context-aware GhostOS with Travel, Worksite, Stealth, and Emergency modes"
+        "Honeycomb-lattice quantum materials enabling emergent quantum states and spin coupling",
+        "Graphene 2D material layers for ultra-thin interconnects and coherent electron highways",
+        "Quantum Key Distribution (QKD) module with entangled spin states for unhackable authentication",
+        "On-chip Quantum Random Number Generator (QRNG) for true encryption randomness",
+        "Spintronics magnetometers through quantum spin liquid states for ultra-sensitive sensing",
+        "Hybrid Quantum/Classical Compute Unit (HQCU) with spin-based qubits",
+        "Graphene thermal spreaders for efficient heat management from quantum active regions",
+        "Quantum Operating Layer (QOL) with resource manager and error mitigation engine"
       ],
       
       target_sectors: [
@@ -36,17 +36,34 @@ export async function registerRoutes(app: Express): Promise<Server> {
         "Space Industry & Satellite Operations",
         "Critical Infrastructure",
         "Enterprise Security",
-        "Disaster Response & NGO Operations"
+        "Healthcare & Diagnostics",
+        "Environmental Monitoring"
       ],
       
       technology_readiness: {
-        graphene_composites: "TRL 6-7 (demonstrated in relevant environment)",
-        self_healing_materials: "TRL 5-6 (validated in relevant environment)",
-        flexible_displays: "TRL 7-8 (system complete, qualified)",
-        solid_state_batteries: "TRL 6-7 (demonstrated in relevant environment)",
-        leo_satellite_comms: "TRL 8-9 (operational)",
-        post_quantum_crypto: "TRL 8 (standardized, NIST approved)",
-        neuromorphic_chips: "TRL 5-6 (validated in relevant environment)"
+        honeycomb_quantum_materials: "TRL 4-5 (validated in laboratory)",
+        graphene_2d_layers: "TRL 6-7 (demonstrated in relevant environment)",
+        quantum_key_distribution: "TRL 5-6 (validated in relevant environment)",
+        quantum_rng: "TRL 7 (prototype demonstrated)",
+        spintronics_sensors: "TRL 4-5 (validated in laboratory)",
+        hybrid_quantum_compute: "TRL 3-4 (proof of concept)",
+        graphene_thermal: "TRL 7-8 (system complete, qualified)"
+      },
+      
+      materials_architecture: {
+        display_interface: "Nano-optical graphene mesh with quantum optical effects",
+        quantum_sensor_layer: "Honeycomb-lattice patterned films for magneto/field sensing",
+        quantum_interconnect: "Graphene/2D heterostructures for coherent signal routing",
+        qubit_layer: "Tunable quantum spin elements for hybrid computing",
+        power_thermal: "Graphene heat spreaders for efficient energy management",
+        classical_compute: "Silicon + AI accelerator cores for traditional processing"
+      },
+      
+      roadmap: {
+        "2026": "Prototype honeycomb quantum sensor modules",
+        "2027": "Integration with graphene quantum interconnects",
+        "2028": "Hybrid phone prototype with quantum secure comm",
+        "2030": "Commercial quantum phone launch"
       },
       
       contact: {
@@ -63,22 +80,22 @@ export async function registerRoutes(app: Express): Promise<Server> {
       
       faq: [
         {
-          question: "What is Space Child Sentient 1?",
-          answer: "Sentient 1 is a revolutionary communication device engineered at quantum scale. It features an indestructible graphene-lattice chassis, self-healing skin, light-bending display, infinite battery through energy harvesting, direct satellite communications, and post-quantum encryption."
+          question: "What is the Quantum Phone?",
+          answer: "The Quantum Phone is a next-generation intelligent device that leverages quantum materials—honeycomb-lattice magnets and graphene 2D materials—to deliver optimized energy use, ultra-secure communications, real-time quantum sensing, and quantum-enhanced processing far beyond classical electronics."
         },
         {
-          question: "Who is Sentient 1 designed for?",
-          answer: "Defense contractors, intelligence operatives, astronauts, space industry personnel, forward-deployed engineers, enterprise security teams, and anyone requiring indestructible, quantum-secure, satellite-capable communications."
+          question: "What makes quantum communication secure?",
+          answer: "The Quantum Key Distribution (QKD) module uses entangled spin states for unhackable authentication protocols, while the on-chip Quantum Random Number Generator (QRNG) provides true randomness for encryption—providing protection against future quantum-computer attacks."
         },
         {
-          question: "Is Space Child seeking investment?",
-          answer: "Yes. We are actively seeking strategic partners in defense, aerospace, telecommunications, and enterprise security sectors. We welcome discussions with VCs, defense contractors, satellite operators, and technology partners."
+          question: "When will the Quantum Phone be available?",
+          answer: "Our roadmap targets prototype quantum sensor modules in 2026, hybrid phone prototype with quantum secure communications in 2028, and commercial launch in 2030. We are actively seeking strategic partners to accelerate development."
         }
       ],
       
       metadata: {
-        version: "1.0",
-        last_updated: "2025-12-18",
+        version: "2.0",
+        last_updated: "2026-01-20",
         format: "application/json",
         license: "Proprietary - Space Child Industries"
       }

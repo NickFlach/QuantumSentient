@@ -47,53 +47,71 @@ const TechnicalBriefModal = () => (
     <DialogHeader>
       <DialogTitle className="text-2xl font-bold uppercase tracking-widest text-primary mb-2">Technical Specifications</DialogTitle>
       <DialogDescription className="text-muted-foreground">
-        CLASSIFIED // LEVEL 5 CLEARANCE // PROJECT SPACE CHILD
+        CLASSIFIED // LEVEL 5 CLEARANCE // PROJECT QUANTUM PHONE
       </DialogDescription>
     </DialogHeader>
     <div className="grid md:grid-cols-2 gap-8 mt-6">
       <div className="space-y-6">
         <div>
-          <h4 className="text-sm text-white/50 uppercase mb-2 border-b border-white/10 pb-1">Compute & Intelligence</h4>
+          <h4 className="text-sm text-white/50 uppercase mb-2 border-b border-white/10 pb-1">Quantum Materials Architecture</h4>
           <ul className="space-y-2 text-sm">
-            <li className="flex justify-between"><span className="text-white/70">Main Processor</span> <span>SC-1 Neural Core (3nm)</span></li>
-            <li className="flex justify-between"><span className="text-white/70">Neuromorphic Sidecar</span> <span>Spiking Neural Chip (Ultra-Low Power)</span></li>
-            <li className="flex justify-between"><span className="text-white/70">Memory</span> <span>32GB Unified Quantum RAM</span></li>
-            <li className="flex justify-between"><span className="text-white/70">OS</span> <span>GhostOS 1.0 (Context-Aware)</span></li>
+            <li className="flex justify-between"><span className="text-white/70">Lattice Core</span> <span>Honeycomb Quantum Materials</span></li>
+            <li className="flex justify-between"><span className="text-white/70">Quantum Bus</span> <span>Graphene 2D Heterostructures</span></li>
+            <li className="flex justify-between"><span className="text-white/70">Interconnect</span> <span>Van der Waals Stacked Layers</span></li>
+            <li className="flex justify-between"><span className="text-white/70">Qubit Layer</span> <span>Tunable Quantum Spin Elements</span></li>
           </ul>
         </div>
         <div>
-          <h4 className="text-sm text-white/50 uppercase mb-2 border-b border-white/10 pb-1">Shell & Display</h4>
+          <h4 className="text-sm text-white/50 uppercase mb-2 border-b border-white/10 pb-1">Quantum Accelerators</h4>
           <ul className="space-y-2 text-sm">
-            <li className="flex justify-between"><span className="text-white/70">Frame</span> <span>Graphene-Reinforced Composite</span></li>
-            <li className="flex justify-between"><span className="text-white/70">Outer Layer</span> <span>Self-Healing Elastomer Skin</span></li>
-            <li className="flex justify-between"><span className="text-white/70">Display</span> <span>Flexible Graphene Micro-LED + Metasurface</span></li>
-            <li className="flex justify-between"><span className="text-white/70">Rating</span> <span>Impact Redirection + Auto-Healing</span></li>
+            <li className="flex justify-between"><span className="text-white/70">HQCU</span> <span>Hybrid Quantum/Classical Unit</span></li>
+            <li className="flex justify-between"><span className="text-white/70">Qubits</span> <span>Spin-Based Honeycomb Lattice</span></li>
+            <li className="flex justify-between"><span className="text-white/70">Classical Core</span> <span>Silicon + AI Accelerator</span></li>
+            <li className="flex justify-between"><span className="text-white/70">OS</span> <span>Quantum Operating Layer (QOL)</span></li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="text-sm text-white/50 uppercase mb-2 border-b border-white/10 pb-1">Quantum Sensors</h4>
+          <ul className="space-y-2 text-sm">
+            <li className="flex justify-between"><span className="text-white/70">Magnetometer</span> <span>Spintronics Quantum Spin Liquid</span></li>
+            <li className="flex justify-between"><span className="text-white/70">Electro-Optical</span> <span>Graphene Broad Spectrum Sensor</span></li>
+            <li className="flex justify-between"><span className="text-white/70">Applications</span> <span>Navigation / Health / Environment</span></li>
+            <li className="flex justify-between"><span className="text-white/70">Haptics</span> <span>Quantum Sensor Array Feedback</span></li>
           </ul>
         </div>
       </div>
       <div className="space-y-6">
         <div>
-          <h4 className="text-sm text-white/50 uppercase mb-2 border-b border-white/10 pb-1">Comms & Security</h4>
+          <h4 className="text-sm text-white/50 uppercase mb-2 border-b border-white/10 pb-1">Quantum Secure Communication</h4>
           <ul className="space-y-2 text-sm">
-            <li className="flex justify-between"><span className="text-white/70">Antenna</span> <span>Phased-Array RF (Electronically Steered)</span></li>
-            <li className="flex justify-between"><span className="text-white/70">Modes</span> <span>LEO Satellite / 5G-6G / Mesh Relay</span></li>
-            <li className="flex justify-between"><span className="text-white/70">Crypto</span> <span>Post-Quantum (Kyber, Dilithium)</span></li>
-            <li className="flex justify-between"><span className="text-white/70">Auth</span> <span>Hardware PUF + Continuous Biometric</span></li>
+            <li className="flex justify-between"><span className="text-white/70">QKD Module</span> <span>Entangled Spin State Distribution</span></li>
+            <li className="flex justify-between"><span className="text-white/70">QRNG</span> <span>Quantum Spin Fluctuation Generator</span></li>
+            <li className="flex justify-between"><span className="text-white/70">Encryption</span> <span>Unhackable Quantum Protocols</span></li>
+            <li className="flex justify-between"><span className="text-white/70">Auth</span> <span>Biometrics + Quantum Token</span></li>
           </ul>
         </div>
         <div>
-          <h4 className="text-sm text-white/50 uppercase mb-2 border-b border-white/10 pb-1">Power & Energy Harvesting</h4>
+          <h4 className="text-sm text-white/50 uppercase mb-2 border-b border-white/10 pb-1">Power & Thermal Systems</h4>
           <ul className="space-y-2 text-sm">
-            <li className="flex justify-between"><span className="text-white/70">Battery</span> <span>Solid-State Graphene Supercapacitor</span></li>
-            <li className="flex justify-between"><span className="text-white/70">Solar</span> <span>Perovskite Laminate (Back + Sides)</span></li>
-            <li className="flex justify-between"><span className="text-white/70">Passive</span> <span>Body-Heat + Motion Harvesting</span></li>
-            <li className="flex justify-between"><span className="text-white/70">Real Use</span> <span>Effectively Never Dies</span></li>
+            <li className="flex justify-between"><span className="text-white/70">Thermal</span> <span>Graphene Heat Spreaders</span></li>
+            <li className="flex justify-between"><span className="text-white/70">Battery</span> <span>Quantum Material Interface</span></li>
+            <li className="flex justify-between"><span className="text-white/70">Display</span> <span>Nano-Optical Graphene Mesh</span></li>
+            <li className="flex justify-between"><span className="text-white/70">Efficiency</span> <span>High-Density Energy Control</span></li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="text-sm text-white/50 uppercase mb-2 border-b border-white/10 pb-1">Roadmap</h4>
+          <ul className="space-y-2 text-sm">
+            <li className="flex justify-between"><span className="text-white/70">2026</span> <span>Quantum Sensor Prototype</span></li>
+            <li className="flex justify-between"><span className="text-white/70">2027</span> <span>Graphene Interconnect Integration</span></li>
+            <li className="flex justify-between"><span className="text-white/70">2028</span> <span>Hybrid Prototype w/ Quantum Comms</span></li>
+            <li className="flex justify-between"><span className="text-white/70">2030</span> <span>Commercial Quantum Phone Launch</span></li>
           </ul>
         </div>
       </div>
     </div>
     <div className="mt-8 p-4 border border-primary/20 bg-primary/5 text-xs text-primary/80 font-mono">
-      WARNING: DISASSEMBLY OF DEVICE WILL TRIGGER AUTOMATIC DATA WIPE AND CORE LOCKDOWN.
+      WARNING: QUANTUM COHERENCE MUST BE MAINTAINED. UNAUTHORIZED ACCESS TRIGGERS AUTOMATIC DECOHERENCE PROTOCOL.
     </div>
     <div className="mt-4 flex justify-end">
       <DialogTrigger asChild>
@@ -402,38 +420,38 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <FeatureCard 
               icon={Shield}
-              title="INDESTRUCTIBLE SHELL"
-              desc="Graphene-reinforced composite with self-healing elastomer skin. Drop it from a building—forces ripple around it, not through it. Scratches heal with warmth."
+              title="HONEYCOMB QUANTUM CORE"
+              desc="Honeycomb-lattice quantum materials enable emergent quantum states. Spin-coupled magnetic interactions host exotic quantum spin liquids and Majorana excitations for fault-tolerant memory."
               delay={0.1}
             />
             <FeatureCard 
               icon={Radio}
-              title="LIGHT-BENDING DISPLAY"
-              desc="Flexible graphene micro-LED with metasurface optics. Shatter-proof, transparent mode for AR overlays. Visible in full sun, hologram-like depth without headsets."
+              title="QUANTUM SECURE COMMS"
+              desc="QKD module uses entangled spin states for unhackable authentication. On-chip QRNG leverages quantum spin fluctuations for true randomness—immune to future quantum attacks."
               delay={0.2}
             />
             <FeatureCard 
               icon={Zap}
-              title="INFINITE POWER"
-              desc="Solid-state graphene supercapacitor with body-heat and motion harvesting. Solar trickle-charge. Under normal use, effectively never dies."
+              title="GRAPHENE THERMAL SYSTEM"
+              desc="Graphene thermal spreaders efficiently manage heat from quantum and classical components. Quantum battery interfaces enable high-density energy storage and precision release control."
               delay={0.3}
             />
             <FeatureCard 
-              icon={Radio}
-              title="SATELLITE GROUND STATION"
-              desc="Phased-array antennas that electronically aim at LEO constellations. Messaging in the wilderness. Mesh relay in emergencies. Always connected."
+              icon={Globe}
+              title="QUANTUM SENSOR ARRAY"
+              desc="Spintronics magnetometers detect ultra-sensitive magnetic fields. Graphene electro-optical sensors provide broad spectrum detection for navigation, health diagnostics, and gesture recognition."
               delay={0.4}
             />
             <FeatureCard 
               icon={Lock}
-              title="QUANTUM-SAFE IDENTITY"
-              desc="Post-quantum cryptography. Hardware keys derived from physical unclonable functions. Continuous biometric auth: gait, voice, microvascular patterns."
+              title="QUANTUM IDENTITY"
+              desc="Secure Quantum Identity combines biometrics with quantum tokens. AI-guided sensing provides real-time environmental and health insights through the invisible quantum communication stack."
               delay={0.5}
             />
             <FeatureCard 
               icon={Cpu}
-              title="CONTEXT-AWARE OS"
-              desc="Reconfigures UI, permissions, and power per task: Travel, Worksite, Stealth, Emergency. Neuromorphic sidecar chip handles AI at quantum efficiency."
+              title="HYBRID QUANTUM/CLASSICAL"
+              desc="HQCU integrates quantum co-processors with classical AI cores. Honeycomb materials serve as qubits with graphene channels enabling low-loss quantum communication between processing elements."
               delay={0.6}
             />
           </div>

@@ -1,8 +1,8 @@
 # Overview
 
-This is a full-stack web application built with React, Express, and PostgreSQL, designed as a landing page with a preorder collection system for Space Child's "Sentient 1" phone. The application features a Dark Future aesthetic with quantum-engineering messaging, emphasizing Floquet-effect tuning and graphene-lattice materials.
+This is a full-stack web application built with React, Express, and PostgreSQL, designed as a landing page with a preorder collection system for Space Child's "Quantum Phone". The application features a Dark Future aesthetic with quantum-engineering messaging, emphasizing honeycomb-lattice quantum materials and graphene 2D architecture.
 
-The narrative centers on real quantum breakthroughs: the device is "engineered at quantum scale" with Floquet-tuned circuits inspired by recent discoveries in quantum materials engineering. Custom fonts (Space Grotesk for headlines, JetBrains Mono for UI) reinforce the cyberpunk-meets-science aesthetic.
+The narrative centers on real quantum breakthroughs: the device leverages quantum materials—honeycomb-lattice magnets and graphene 2D materials—to deliver capabilities far beyond classical electronics, including optimized energy use, ultra-secure communications via Quantum Key Distribution (QKD), real-time quantum sensing, and quantum-enhanced processing through Hybrid Quantum/Classical Compute Units (HQCU). Custom fonts (Space Grotesk for headlines, JetBrains Mono for UI) reinforce the cyberpunk-meets-science aesthetic.
 
 The application follows a modern monorepo structure with separate client and server directories, using TypeScript throughout. The frontend is built with React and Vite, styled with Tailwind CSS and shadcn/ui components, while the backend uses Express with a PostgreSQL database managed through Drizzle ORM. Email functionality sends unique access codes via SMTP with proper secure connection handling.
 
@@ -140,22 +140,20 @@ Preferred communication style: Simple, everyday language.
 - Includes messaging about future contact directives
 - Connection verified before each send with transporter.verify()
 
-## Recent Updates (November 22, 2025)
-- **Living Artifact Reimagining**: Completely reframed Sentient 1 as a "living artifact" with eight layered systems that adapt and heal
-- **Core Positioning**: "Not a phone. A living artifact. Sentient 1 breathes, heals, adapts."
-- **Eight Layered Systems**:
-  1. Indestructible Shell - Graphene-reinforced composite with self-healing elastomer skin
-  2. Light-Bending Display - Flexible graphene micro-LED with metasurface optics for transparent AR mode
-  3. Infinite Power - Solid-state graphene supercapacitor with body-heat and solar harvesting
-  4. Satellite Ground Station - Phased-array antennas that electronically aim at LEO constellations
-  5. Quantum-Safe Identity - Post-quantum crypto with hardware PUF and continuous biometric auth
-  6. Context-Aware OS - GhostOS reconfigures per task (Travel, Worksite, Stealth, Emergency)
-  7. Neuromorphic Intelligence - Spiking neural chip for AI efficiency, on-device processing
-  8. Secure-by-Design - Tamper-evident enclave with sensor fusion authentication
-- **Technical Brief**: Updated specs to reflect all 8 layers with plausible near-term technology
-- **Feature Cards**: Six cards representing the most critical systems
-- **"More Than Consciousness" Section**: Emphasizes learning, anticipation, healing, adaptation
-- **Hero Subheading**: Updated to reference all key innovation areas in conversational tone
+## Recent Updates (January 20, 2026)
+- **Quantum Phone Specification Update**: Complete refresh based on new quantum materials architecture specification
+- **Core Positioning**: "Beyond classical electronics. Quantum-enhanced intelligence."
+- **Quantum Materials Architecture**:
+  1. Honeycomb Quantum Core - Honeycomb-lattice quantum materials enabling emergent quantum states
+  2. Quantum Secure Comms - QKD module with entangled spin states, on-chip QRNG
+  3. Graphene Thermal System - Graphene heat spreaders and quantum battery interfaces
+  4. Quantum Sensor Array - Spintronics magnetometers and graphene electro-optical sensors
+  5. Quantum Identity - Biometrics + quantum tokens with AI-guided sensing
+  6. Hybrid Quantum/Classical - HQCU with spin-based qubits and graphene quantum channels
+- **Technical Brief**: Updated specs reflecting quantum materials layers (Display Interface, Quantum Sensor Layer, Quantum Interconnect, Qubit Layer, Power & Thermal, Classical Compute)
+- **Roadmap**: 2026 prototype → 2027 interconnect integration → 2028 hybrid prototype → 2030 commercial launch
+- **AI Presskit API**: Updated with new differentiators, technology readiness levels, and materials architecture
+- **Feature Cards**: Six cards representing core quantum capabilities
 
 ## SEO/GEO Implementation (December 18, 2025)
 
